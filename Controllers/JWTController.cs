@@ -13,10 +13,15 @@ namespace JwtAuth.Controllers
         {
             var list = new[]
             {
-                new {Code = 1, Name= "This endpoint is restricted"},
-                new {Code = 2, Name = "you have to login to see this"}
+                new {Name= "This endpoint is restricted"},
+                new {Name = "you have to login to see this"}
             }.ToList();
-            
+
+            foreach (var claim in HttpContext.User.Claims)
+            {
+                list.Add(new { Name = claim.Value });
+            }
+
             return Ok(list);
         }
 
@@ -31,9 +36,5 @@ namespace JwtAuth.Controllers
 
             return Ok(list);
         }
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
     }
 }
