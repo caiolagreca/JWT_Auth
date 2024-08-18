@@ -31,7 +31,7 @@ namespace JwtAuth.Controllers
             var list = new[]
             {
                 new {Code = 1, Name = "everybody can see this endpoint"},
-            new {Code = 2, Name = "Whatver"}
+                new {Code = 2, Name = "Whatver"}
             }.ToList();
 
             return Ok(list);
