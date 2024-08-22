@@ -20,11 +20,6 @@ namespace JwtAuth.Controllers
         {
             _logger = logger;
             _signInManager = signInManager;
-
-            //public IActionResult Index()
-            //{
-            //    return View();
-            //}
         }
 
         [AllowAnonymous]
